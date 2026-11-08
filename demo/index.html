@@ -1,0 +1,1336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ClaimSnap — Demo</title>
+<meta name="description" content="Clickable demo of ClaimSnap: insurance-ready roof claim packages for roofers, emailed to the adjuster.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Caveat:wght@600&display=swap">
+<style>
+:root{--bg:#E9ECF1;--ink:#14181F;--muted:#4B5563;--accent:#1D4ED8}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);font-family:Inter,system-ui,sans-serif;color:var(--ink)}
+a{color:#1D4ED8}
+.wrap{max-width:1100px;margin:0 auto;padding:32px 16px 48px;display:flex;gap:40px;align-items:flex-start;justify-content:center;flex-wrap:wrap}
+.intro{flex:1 1 300px;max-width:380px}
+.intro h1{font-size:34px;letter-spacing:-.02em;margin:0 0 8px}
+.intro p{color:var(--muted);line-height:1.55;margin:0 0 16px}
+.home{display:block;font-size:14px;font-weight:600;text-decoration:none;margin-bottom:18px}
+.badge{display:inline-block;font-size:12px;font-weight:600;color:#1E3A8A;background:#DBEAFE;border-radius:99px;padding:4px 10px;margin-bottom:14px}
+nav{display:flex;flex-direction:column;gap:2px;margin-top:8px}
+nav a{display:flex;gap:10px;align-items:center;padding:8px 10px;border-radius:8px;text-decoration:none;color:var(--ink);font-size:14px}
+nav a span{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;width:20px}
+nav a[aria-current="page"]{background:#FFFFFF;font-weight:600}
+nav h2{font-size:12px;letter-spacing:.06em;color:var(--muted);margin:14px 10px 4px;font-weight:600}
+.phone{flex:0 0 auto;width:414px;padding:12px;background:#0B0F14;border-radius:48px;box-shadow:0 20px 60px rgba(15,23,42,.25)}
+.screenbox{width:390px;height:844px;border-radius:36px;overflow:hidden;background:#FFFFFF;position:relative}
+.screen > div{border-radius:0}
+#Home a{color:#14181F}
+.controls{display:flex;justify-content:space-between;margin-top:14px}
+.controls a{color:#FFFFFF;text-decoration:none;font-size:14px;font-weight:600;padding:10px 14px}
+.note{font-size:12px;color:var(--muted);margin-top:18px;line-height:1.5}
+@media (max-width:640px){
+  .wrap{padding:0;gap:0}
+  .intro{order:2;padding:20px 16px 40px;max-width:none}
+  .phone{width:100%;padding:0;border-radius:0;background:transparent;box-shadow:none}
+  .screenbox{width:100%;max-width:390px;margin:0 auto;border-radius:0}
+  .controls{background:#0B0F14;margin:0}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="intro">
+<a href="../" class="home">← ClaimSnap home</a>
+<span class="badge">Clickable demo · sample data</span>
+<h1>ClaimSnap</h1>
+<p>Roof claim files adjusters don't send back. Guided photos, an accuracy check before anything is sent, and one-tap packages emailed to the assigned adjuster — before the build and after.</p>
+<p>Tap the buttons inside the phone to move through a claim, or jump to any screen.</p>
+<nav aria-label="Screens">
+<h2>GET STARTED</h2>
+<a href="#Signup" data-s="Signup"><span>01</span>Sign up</a>
+<a href="#Plan" data-s="Plan"><span>02</span>Pick a plan</a>
+<a href="#Setup" data-s="Setup"><span>03</span>Company + crew</a>
+<a href="#Home" data-s="Home"><span>04</span>Claims home</a>
+<h2>PRE-CLAIM</h2>
+<a href="#Main" data-s="Main"><span>05</span>New claim</a>
+<a href="#ShotList" data-s="ShotList"><span>06</span>Shot list</a>
+<a href="#Capture" data-s="Capture"><span>07</span>Capture</a>
+<a href="#Sort" data-s="Sort"><span>08</span>Sort quick shots</a>
+<a href="#Check" data-s="Check"><span>09</span>Accuracy check</a>
+<a href="#Pdf" data-s="Pdf"><span>10</span>Adjuster PDF</a>
+<a href="#Send" data-s="Send"><span>11</span>Email adjuster</a>
+<a href="#Gallery" data-s="Gallery"><span>12</span>Adjuster gallery (web)</a>
+<a href="#Supplement" data-s="Supplement"><span>13</span>Supplement</a>
+<h2>POST-CLAIM</h2>
+<a href="#Build" data-s="Build"><span>14</span>Completion photos</a>
+<a href="#Signoff" data-s="Signoff"><span>15</span>Invoice + certificate</a>
+<a href="#Timeline" data-s="Timeline"><span>16</span>Claim record</a>
+</nav>
+<p class="note">Names, addresses and claim numbers are made up. Prices shown are proposed launch pricing.</p>
+</div>
+<div class="phone">
+<div class="screenbox">
+<section class="screen" id="Signup" aria-label="Sign up" hidden>
+
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #FFFFFF; font-family: Inter, system-ui, sans-serif; color: #14181F; display: flex; flex-direction: column; padding: 48px 24px 28px">
+<div style="display: flex; align-items: center; gap: 10px">
+<div style="width: 40px; height: 40px; border-radius: 10px; background: #1D4ED8; display: flex; align-items: center; justify-content: center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"></path><path d="M5 10v10h14V10"></path><circle cx="12" cy="15" r="2.5"></circle></svg>
+</div>
+<span style="font-size: 22px; font-weight: 700; letter-spacing: -0.01em">ClaimSnap</span>
+</div>
+<h1 style="margin: 36px 0 0; font-size: 30px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em">Claim files adjusters don't send back.</h1>
+<p style="margin: 12px 0 0; font-size: 15px; line-height: 1.5; color: #4B5563">Guided photos, an accuracy check, and a one-tap package to the adjuster. Free for 14 days.</p>
+<form style="margin-top: 28px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="Signup-name" style="font-size: 13px; font-weight: 600; color: #374151">Your name</label>
+<input id="Signup-name" placeholder="First and last name" style="height: 48px; border: 1px solid #D1D5DB; border-radius: 10px; padding: 0 14px; font: inherit; font-size: 15px">
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="Signup-company" style="font-size: 13px; font-weight: 600; color: #374151">Roofing company</label>
+<input id="Signup-company" placeholder="Company name" style="height: 48px; border: 1px solid #D1D5DB; border-radius: 10px; padding: 0 14px; font: inherit; font-size: 15px">
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="Signup-email" style="font-size: 13px; font-weight: 600; color: #374151">Work email</label>
+<input id="Signup-email" type="email" placeholder="you@yourroofing.com" style="height: 48px; border: 1px solid #D1D5DB; border-radius: 10px; padding: 0 14px; font: inherit; font-size: 15px">
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="Signup-phone" style="font-size: 13px; font-weight: 600; color: #374151">Mobile number</label>
+<input id="Signup-phone" type="tel" placeholder="For your sign-in code" style="height: 48px; border: 1px solid #D1D5DB; border-radius: 10px; padding: 0 14px; font: inherit; font-size: 15px">
+</div>
+</form>
+<div style="flex: 1"></div>
+<a href="#Plan" style="height: 52px; border-radius: 12px; background: #1D4ED8; color: #FFFFFF; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; text-decoration: none">Start free trial</a>
+<div style="display: flex; align-items: center; gap: 10px; margin: 16px 0">
+<div style="flex: 1; height: 1px; background: #E5E7EB"></div><span style="font-size: 12px; color: #4B5563">or</span><div style="flex: 1; height: 1px; background: #E5E7EB"></div>
+</div>
+<a href="#Plan" style="height: 48px; border-radius: 12px; border: 1px solid #D1D5DB; color: #14181F; font-size: 15px; font-weight: 600; display: flex; align-items: center; justify-content: center; text-decoration: none">Continue with Google</a>
+<p style="margin: 16px 0 0; font-size: 13px; text-align: center; color: #4B5563">Invited by your company? <a href="#Home" style="font-weight: 600">Join your team</a></p>
+</div>
+</section>
+<section class="screen" id="Plan" aria-label="Pick a plan" hidden>
+
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F6F7F9; font-family: Inter, system-ui, sans-serif; color: #14181F; display: flex; flex-direction: column">
+<header style="display: flex; align-items: center; gap: 4px; padding: 16px 12px 4px">
+<a href="#Signup" aria-label="Back" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#14181F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+</a>
+<span style="font-size: 13px; color: #4B5563">Step 1 of 2</span>
+</header>
+<div style="padding: 4px 20px 14px">
+<h1 style="margin: 0; font-size: 26px; font-weight: 700; letter-spacing: -0.02em">Pick a plan</h1>
+<p style="margin: 6px 0 0; font-size: 14px; color: #4B5563">14 days free on any plan. One price per company, not per user.</p>
+</div>
+<div role="group" aria-label="Billing period" style="margin: 0 20px 14px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); background: #E5E7EB; border-radius: 10px; padding: 4px">
+<button aria-pressed="true" style="height: 40px; border: none; border-radius: 8px; background: #FFFFFF; font: inherit; font-size: 14px; font-weight: 600; color: #14181F">Monthly</button>
+<button style="height: 40px; border: none; border-radius: 8px; background: transparent; font: inherit; font-size: 14px; font-weight: 600; color: #374151">Annual · 2 months free</button>
+</div>
+<div style="flex: 1; padding: 0 20px; display: flex; flex-direction: column; gap: 10px">
+
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<div style="display: flex; align-items: center; gap: 8px">
+<span style="font-size: 17px; font-weight: 700">Solo</span>
+
+</div>
+<span style="font-size: 17px; font-weight: 700">$39<span style="font-size: 13px; font-weight: 500; color: #4B5563">/mo</span></span>
+</div>
+<span style="font-size: 13px; color: #4B5563">Owner-operator · 1 user</span>
+<span style="font-size: 13px; color: #14181F">15 open claims, both packages</span>
+</div>
+
+<div style="background: #FFFFFF; border: 2px solid #1D4ED8; border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<div style="display: flex; align-items: center; gap: 8px">
+<span style="font-size: 17px; font-weight: 700">Crew</span>
+
+<span style="font-size: 11px; font-weight: 600; color: #1E3A8A; background: #DBEAFE; border-radius: 99px; padding: 3px 8px">Most roofers</span>
+
+</div>
+<span style="font-size: 17px; font-weight: 700">$129<span style="font-size: 13px; font-weight: 500; color: #4B5563">/mo</span></span>
+</div>
+<span style="font-size: 13px; color: #4B5563">Up to 10 users</span>
+<span style="font-size: 13px; color: #14181F">Unlimited claims, adjuster emails, e-signature</span>
+</div>
+
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<div style="display: flex; align-items: center; gap: 8px">
+<span style="font-size: 17px; font-weight: 700">Pro</span>
+
+</div>
+<span style="font-size: 17px; font-weight: 700">$249<span style="font-size: 13px; font-weight: 500; color: #4B5563">/mo</span></span>
+</div>
+<span style="font-size: 13px; color: #4B5563">Up to 25 users</span>
+<span style="font-size: 13px; color: #14181F">Adds supplement builder and AI photo tags</span>
+</div>
+
+<a href="#Plan" style="font-size: 13px; font-weight: 600; text-align: center; padding: 6px">Commercial roofer? Talk to us</a>
+</div>
+<div style="padding: 12px 20px 28px; display: flex; flex-direction: column; gap: 10px">
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 12px 14px; font-size: 13px; line-height: 1.5; color: #374151">Today: <b>$0</b>. Then <b>$129 every month</b> starting Nov 21, renewing automatically. Cancel any time in Settings before then and you won't be charged.</div>
+<a href="#Setup" style="height: 52px; border-radius: 12px; background: #1D4ED8; color: #FFFFFF; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 10h18"></path></svg>
+Add card · start trial
+</a>
+<span style="font-size: 11px; color: #4B5563; text-align: center">Secure payment by Stripe</span>
+</div>
+</div>
+</section>
+<section class="screen" id="Setup" aria-label="Company + crew" hidden>
+
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F6F7F9; font-family: Inter, system-ui, sans-serif; color: #14181F; display: flex; flex-direction: column">
+<header style="display: flex; align-items: center; gap: 4px; padding: 16px 12px 4px">
+<a href="#Plan" aria-label="Back" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#14181F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+</a>
+<span style="font-size: 13px; color: #4B5563">Step 2 of 2</span>
+</header>
+<div style="padding: 4px 20px 14px">
+<h1 style="margin: 0; font-size: 26px; font-weight: 700; letter-spacing: -0.02em">Set up your company</h1>
+<p style="margin: 6px 0 0; font-size: 14px; color: #4B5563">This is what adjusters see on every package.</p>
+</div>
+<div style="flex: 1; padding: 0 20px; display: flex; flex-direction: column; gap: 12px">
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 14px; padding: 14px 16px; display: flex; align-items: center; gap: 14px">
+<button aria-label="Upload logo" style="width: 64px; height: 64px; border-radius: 12px; border: 1.5px dashed #9CA3AF; background: #F9FAFB; display: flex; align-items: center; justify-content: center; flex-shrink: 0">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+</button>
+<div style="display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 15px; font-weight: 600">Company logo</span>
+<span style="font-size: 12px; color: #4B5563">Top of every PDF and email</span>
+</div>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px">
+<label for="Setup-from" style="font-size: 13px; font-weight: 600; color: #374151">Packages are sent from</label>
+<input id="Setup-from" value="office@[yourroofing].com" style="height: 46px; border: 1px solid #D1D5DB; border-radius: 10px; padding: 0 14px; font: inherit; font-size: 15px">
+<span style="font-size: 12px; color: #15803D; font-weight: 600">Verified · adjuster replies come to this inbox</span>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 15px; font-weight: 600">Invite your crew</span>
+
+<div style="display: flex; align-items: center; gap: 10px">
+<div style="width: 34px; height: 34px; border-radius: 99px; background: #DBEAFE; color: #1E3A8A; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center">JY</div>
+<span style="flex: 1; font-size: 14px">Jonas Y. · (214) 555-0142</span>
+<span style="font-size: 12px; font-weight: 600; color: #374151; background: #F3F4F6; border-radius: 99px; padding: 4px 10px">Crew lead</span>
+</div>
+
+<div style="display: flex; align-items: center; gap: 10px">
+<div style="width: 34px; height: 34px; border-radius: 99px; background: #DBEAFE; color: #1E3A8A; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center">EM</div>
+<span style="flex: 1; font-size: 14px">Eli M. · (214) 555-0187</span>
+<span style="font-size: 12px; font-weight: 600; color: #374151; background: #F3F4F6; border-radius: 99px; padding: 4px 10px">Crew · Español</span>
+</div>
+
+<div style="display: flex; align-items: center; gap: 10px">
+<div style="width: 34px; height: 34px; border-radius: 99px; background: #DBEAFE; color: #1E3A8A; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center">RS</div>
+<span style="flex: 1; font-size: 14px">office@[yourroofing].com</span>
+<span style="font-size: 12px; font-weight: 600; color: #374151; background: #F3F4F6; border-radius: 99px; padding: 4px 10px">Office</span>
+</div>
+
+<button style="height: 44px; border-radius: 10px; border: 1px dashed #9CA3AF; background: transparent; font: inherit; font-size: 14px; font-weight: 600; color: #1D4ED8">Add by phone number</button>
+<span style="font-size: 12px; color: #4B5563; line-height: 1.4">Crew get a text with an app link and can use the app in English or Spanish. They capture photos only; office builds and sends packages.</span>
+</div>
+</div>
+<div style="padding: 16px 20px 28px">
+<a href="#Home" style="height: 52px; border-radius: 12px; background: #1D4ED8; color: #FFFFFF; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; text-decoration: none">Finish · go to claims</a>
+</div>
+</div>
+</section>
+<section class="screen" id="Home" aria-label="Claims home" hidden>
+
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F6F7F9; font-family: Inter, system-ui, sans-serif; color: #14181F; display: flex; flex-direction: column">
+<header style="display: flex; align-items: center; justify-content: space-between; padding: 20px 20px 8px">
+<div style="display: flex; align-items: center; gap: 8px">
+<div style="width: 32px; height: 32px; border-radius: 8px; background: #1D4ED8; display: flex; align-items: center; justify-content: center">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"></path><path d="M5 10v10h14V10"></path><circle cx="12" cy="15" r="2.5"></circle></svg>
+</div>
+<span style="font-size: 18px; font-weight: 700">Claims</span>
+</div>
+<span style="font-size: 12px; font-weight: 600; color: #1E3A8A; background: #DBEAFE; border-radius: 99px; padding: 5px 10px">Trial · 14 days left</span>
+</header>
+<div style="padding: 8px 20px 12px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 10px 12px"><div style="font-size: 20px; font-weight: 700">2</div><div style="font-size: 12px; color: #4B5563">Need photos</div></div>
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 10px 12px"><div style="font-size: 20px; font-weight: 700">2</div><div style="font-size: 12px; color: #4B5563">With adjuster</div></div>
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 10px 12px"><div style="font-size: 20px; font-weight: 700; color: #C2410C">1</div><div style="font-size: 12px; color: #4B5563">Awaiting release</div></div>
+</div>
+<div style="flex: 1; padding: 0 20px; display: flex; flex-direction: column; gap: 8px; overflow: hidden">
+
+<a href="#Timeline" style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 12px 14px; display: flex; align-items: center; gap: 12px; text-decoration: none">
+<div style="flex: 1; display: flex; flex-direction: column; gap: 3px">
+<span style="font-size: 15px; font-weight: 600">1418 Pecan Hollow Dr</span>
+<span style="font-size: 12px; color: #4B5563">Plano · claim TX-48213-77</span>
+</div>
+<span style="font-size: 12px; font-weight: 600; border-radius: 99px; padding: 4px 10px; background: #FEF3C7; color: #92400E; white-space: nowrap">Awaiting release</span>
+</a>
+
+<a href="#ShotList" style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 12px 14px; display: flex; align-items: center; gap: 12px; text-decoration: none">
+<div style="flex: 1; display: flex; flex-direction: column; gap: 3px">
+<span style="font-size: 15px; font-weight: 600">902 Juniper Ct</span>
+<span style="font-size: 12px; color: #4B5563">Allen · 9 of 18 shots</span>
+</div>
+<span style="font-size: 12px; font-weight: 600; border-radius: 99px; padding: 4px 10px; background: #FFF7ED; color: #9A3412; white-space: nowrap">Needs photos</span>
+</a>
+
+<a href="#Timeline" style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 12px 14px; display: flex; align-items: center; gap: 12px; text-decoration: none">
+<div style="flex: 1; display: flex; flex-direction: column; gap: 3px">
+<span style="font-size: 15px; font-weight: 600">77 Ridgeview Ln</span>
+<span style="font-size: 12px; color: #4B5563">McKinney · sent Nov 5</span>
+</div>
+<span style="font-size: 12px; font-weight: 600; border-radius: 99px; padding: 4px 10px; background: #DBEAFE; color: #1E3A8A; white-space: nowrap">With adjuster</span>
+</a>
+
+<a href="#Supplement" style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 12px 14px; display: flex; align-items: center; gap: 12px; text-decoration: none">
+<div style="flex: 1; display: flex; flex-direction: column; gap: 3px">
+<span style="font-size: 15px; font-weight: 600">3301 Brookside Ave</span>
+<span style="font-size: 12px; color: #4B5563">Frisco · supplement sent</span>
+</div>
+<span style="font-size: 12px; font-weight: 600; border-radius: 99px; padding: 4px 10px; background: #DBEAFE; color: #1E3A8A; white-space: nowrap">With adjuster</span>
+</a>
+
+<a href="#Build" style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 12px 14px; display: flex; align-items: center; gap: 12px; text-decoration: none">
+<div style="flex: 1; display: flex; flex-direction: column; gap: 3px">
+<span style="font-size: 15px; font-weight: 600">15 Sycamore Bend</span>
+<span style="font-size: 12px; color: #4B5563">Plano · crew on site</span>
+</div>
+<span style="font-size: 12px; font-weight: 600; border-radius: 99px; padding: 4px 10px; background: #F3F4F6; color: #374151; white-space: nowrap">Building</span>
+</a>
+
+<a href="#ShotList" style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 12px 14px; display: flex; align-items: center; gap: 12px; text-decoration: none">
+<div style="flex: 1; display: flex; flex-direction: column; gap: 3px">
+<span style="font-size: 15px; font-weight: 600">640 Cedar Trace</span>
+<span style="font-size: 12px; color: #4B5563">Wylie · 0 of 18 shots</span>
+</div>
+<span style="font-size: 12px; font-weight: 600; border-radius: 99px; padding: 4px 10px; background: #FFF7ED; color: #9A3412; white-space: nowrap">Needs photos</span>
+</a>
+
+</div>
+<div style="padding: 12px 20px 28px">
+<a href="#Main" style="height: 52px; border-radius: 12px; background: #1D4ED8; color: #FFFFFF; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+New claim
+</a>
+</div>
+</div>
+</section>
+<section class="screen" id="Main" aria-label="New claim" hidden>
+
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F6F7F9; font-family: Inter, system-ui, sans-serif; color: #14181F; display: flex; flex-direction: column">
+<header style="display: flex; align-items: center; justify-content: space-between; padding: 20px 20px 12px">
+<div style="display: flex; align-items: center; gap: 8px">
+<div style="width: 32px; height: 32px; border-radius: 8px; background: #1D4ED8; display: flex; align-items: center; justify-content: center">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"></path><path d="M5 10v10h14V10"></path><circle cx="12" cy="15" r="2.5"></circle></svg>
+</div>
+<span style="font-size: 18px; font-weight: 700; letter-spacing: -0.01em">ClaimSnap</span>
+</div>
+<a href="#Home" aria-label="Close" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#14181F" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+</a>
+</header>
+<div style="padding: 4px 20px 16px">
+<h1 style="margin: 0; font-size: 26px; font-weight: 700; letter-spacing: -0.02em">New claim</h1>
+<p style="margin: 6px 0 0; font-size: 14px; color: #4B5563">Takes about a minute. The adjuster's email is where every package goes.</p>
+</div>
+<form style="flex: 1; padding: 0 20px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="Main-addr" style="font-size: 13px; font-weight: 600; color: #374151">Property address</label>
+<input id="Main-addr" value="1418 Pecan Hollow Dr, Plano, TX" style="height: 48px; border: 1px solid #D1D5DB; border-radius: 10px; padding: 0 14px; font: inherit; font-size: 15px; background: #FFFFFF">
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="Main-owner" style="font-size: 13px; font-weight: 600; color: #374151">Homeowner</label>
+<input id="Main-owner" value="Dana Whitfield" style="height: 48px; border: 1px solid #D1D5DB; border-radius: 10px; padding: 0 14px; font: inherit; font-size: 15px; background: #FFFFFF">
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="Main-carrier" style="font-size: 13px; font-weight: 600; color: #374151">Carrier</label>
+<input id="Main-carrier" value="[Carrier]" style="height: 48px; border: 1px solid #D1D5DB; border-radius: 10px; padding: 0 14px; font: inherit; font-size: 15px; background: #FFFFFF">
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="Main-claim" style="font-size: 13px; font-weight: 600; color: #374151">Claim #</label>
+<input id="Main-claim" value="TX-48213-77" style="height: 48px; border: 1px solid #D1D5DB; border-radius: 10px; padding: 0 14px; font: inherit; font-size: 15px; background: #FFFFFF">
+</div>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #DBEAFE; border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; align-items: center; gap: 8px">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>
+<span style="font-size: 14px; font-weight: 600">Assigned adjuster</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="Main-adj" style="font-size: 13px; font-weight: 600; color: #374151">Name</label>
+<input id="Main-adj" value="M. Okafor" style="height: 44px; border: 1px solid #D1D5DB; border-radius: 10px; padding: 0 14px; font: inherit; font-size: 15px; background: #FFFFFF">
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="Main-adjemail" style="font-size: 13px; font-weight: 600; color: #374151">Email</label>
+<input id="Main-adjemail" value="m.okafor@[carrier].com" style="height: 44px; border: 1px solid #D1D5DB; border-radius: 10px; padding: 0 14px; font: inherit; font-size: 15px; background: #FFFFFF">
+</div>
+</div>
+<div style="display: flex; align-items: center; gap: 10px; padding: 12px 14px; background: #ECFDF5; border-radius: 10px">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
+<span style="font-size: 13px; color: #14532D">Storm date found for this address: hail reported 10/22/2026</span>
+</div>
+</form>
+<div style="padding: 16px 20px 28px">
+<a href="#ShotList" style="height: 52px; border-radius: 12px; background: #1D4ED8; color: #FFFFFF; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; text-decoration: none">Start inspection</a>
+</div>
+</div>
+</section>
+<section class="screen" id="ShotList" aria-label="Shot list" hidden>
+
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F6F7F9; font-family: Inter, system-ui, sans-serif; color: #14181F; display: flex; flex-direction: column">
+<header style="display: flex; align-items: center; gap: 4px; padding: 16px 12px 8px">
+<a href="#Main" aria-label="Back" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#14181F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+</a>
+<div style="display: flex; flex-direction: column">
+<span style="font-size: 16px; font-weight: 600">1418 Pecan Hollow Dr</span>
+<span style="font-size: 12px; color: #4B5563">Claim TX-48213-77 · Pre-claim</span>
+</div>
+</header>
+<div style="padding: 8px 20px 16px; display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; justify-content: space-between; align-items: baseline">
+<span style="font-size: 22px; font-weight: 700; letter-spacing: -0.02em">Shot list</span>
+<span style="font-size: 14px; font-weight: 600; color: #1D4ED8">14 of 18</span>
+</div>
+<div style="height: 8px; background: #E5E7EB; border-radius: 99px; overflow: hidden">
+<div style="width: 78%; height: 8px; background: #1D4ED8; border-radius: 99px"></div>
+</div>
+</div>
+<div style="flex: 1; padding: 0 20px; display: flex; flex-direction: column; gap: 10px; overflow: hidden">
+
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 12px 14px; display: flex; align-items: center; gap: 12px">
+
+<div style="width: 28px; height: 28px; border-radius: 99px; background: #15803D; display: flex; align-items: center; justify-content: center; flex-shrink: 0">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
+</div>
+
+
+<div style="flex: 1; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 15px; font-weight: 600">Long shots: all 4 elevations</span>
+<span style="font-size: 12px; color: #4B5563">Front, back, left, right from the street</span>
+</div>
+<span style="font-size: 13px; font-weight: 600; color: #15803D">4/4</span>
+</div>
+
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 12px 14px; display: flex; align-items: center; gap: 12px">
+
+
+<div style="width: 28px; height: 28px; border-radius: 99px; border: 2px solid #C2410C; box-sizing: border-box; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #C2410C; font-size: 13px; font-weight: 700">!</div>
+
+<div style="flex: 1; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 15px; font-weight: 600">Roof slopes</span>
+<span style="font-size: 12px; color: #4B5563">One wide shot per slope, tagged N/S/E/W</span>
+</div>
+<span style="font-size: 13px; font-weight: 600; color: #C2410C">4/6</span>
+</div>
+
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 12px 14px; display: flex; align-items: center; gap: 12px">
+
+<div style="width: 28px; height: 28px; border-radius: 99px; background: #15803D; display: flex; align-items: center; justify-content: center; flex-shrink: 0">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
+</div>
+
+
+<div style="flex: 1; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 15px; font-weight: 600">Test squares + hail hits</span>
+<span style="font-size: 12px; color: #4B5563">Chalk circles, ruler for scale</span>
+</div>
+<span style="font-size: 13px; font-weight: 600; color: #15803D">3/3</span>
+</div>
+
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 12px 14px; display: flex; align-items: center; gap: 12px">
+
+<div style="width: 28px; height: 28px; border-radius: 99px; background: #15803D; display: flex; align-items: center; justify-content: center; flex-shrink: 0">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
+</div>
+
+
+<div style="flex: 1; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 15px; font-weight: 600">Soft metals</span>
+<span style="font-size: 12px; color: #4B5563">Gutters, vents, downspouts, AC fins</span>
+</div>
+<span style="font-size: 13px; font-weight: 600; color: #15803D">2/2</span>
+</div>
+
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 12px 14px; display: flex; align-items: center; gap: 12px">
+
+
+<div style="width: 28px; height: 28px; border-radius: 99px; border: 2px solid #C2410C; box-sizing: border-box; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #C2410C; font-size: 13px; font-weight: 700">!</div>
+
+<div style="flex: 1; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 15px; font-weight: 600">Flashing + penetrations</span>
+<span style="font-size: 12px; color: #4B5563">Chimney, pipe boots, skylights</span>
+</div>
+<span style="font-size: 13px; font-weight: 600; color: #C2410C">1/2</span>
+</div>
+
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 12px 14px; display: flex; align-items: center; gap: 12px">
+
+
+<div style="width: 28px; height: 28px; border-radius: 99px; border: 2px solid #C2410C; box-sizing: border-box; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #C2410C; font-size: 13px; font-weight: 700">!</div>
+
+<div style="flex: 1; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 15px; font-weight: 600">Interior / attic</span>
+<span style="font-size: 12px; color: #4B5563">Optional — stains, decking from below</span>
+</div>
+<span style="font-size: 13px; font-weight: 600; color: #C2410C">0/1</span>
+</div>
+
+</div>
+<div style="padding: 16px 20px 28px; display: flex; gap: 10px">
+<a href="#Capture" style="flex: 1; height: 52px; border-radius: 12px; background: #1D4ED8; color: #FFFFFF; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg>
+Next shot: South slope
+</a>
+</div>
+</div>
+</section>
+<section class="screen" id="Capture" aria-label="Capture" hidden>
+
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #0B0F14; font-family: Inter, system-ui, sans-serif; color: #FFFFFF; display: flex; flex-direction: column">
+<header style="display: flex; align-items: center; justify-content: space-between; padding: 16px 12px 12px">
+<a href="#ShotList" aria-label="Back to shot list" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+</a>
+<div style="display: flex; flex-direction: column; align-items: center">
+<span style="font-size: 12px; color: #9CA3AF">Shot 15 of 18</span>
+<span style="font-size: 16px; font-weight: 600">South slope — wide</span>
+</div>
+<div style="width: 44px"></div>
+</header>
+<div style="margin: 0 12px; flex: 1; border-radius: 16px; background: #1F2937; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center">
+<svg width="300" height="220" viewBox="0 0 300 220" fill="none" role="img" aria-label="Framing guide: fit the whole slope inside the outline">
+<path d="M20 180 L150 40 L280 180 Z" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="2" stroke-dasharray="8 6"></path>
+<path d="M20 180 H280" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="2" stroke-dasharray="8 6"></path>
+</svg>
+<div style="position: absolute; top: 14px; left: 14px; right: 14px; background: #000000B3; border-radius: 10px; padding: 10px 12px; font-size: 13px; line-height: 1.4">Stand back from the eave. Fit the whole south slope, ridge to gutter, inside the outline.</div>
+<div style="position: absolute; left: 14px; right: 14px; bottom: 56px; background: #FFFFFFF2; color: #14181F; border-radius: 10px; padding: 10px 12px; display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 11px; font-weight: 600; color: #4B5563">Voice note · Español → caption</span>
+<span style="font-size: 12px; font-style: italic; color: #374151">"Nueve golpes en el cuadro de prueba, lado sur"</span>
+<span style="font-size: 13px; font-weight: 600">9 hits in test square, south slope</span>
+</div>
+<div style="position: absolute; bottom: 14px; left: 14px; display: flex; gap: 6px">
+<span style="background: #000000B3; border-radius: 99px; padding: 6px 10px; font-size: 12px; display: flex; align-items: center; gap: 6px">
+<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#86EFAC" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.5-7-12a7 7 0 0114 0c0 5.5-7 12-7 12z"></path><circle cx="12" cy="9" r="2.5"></circle></svg>
+GPS locked
+</span>
+<span style="background: #000000B3; border-radius: 99px; padding: 6px 10px; font-size: 12px">10:42 AM · Jonas Y.</span>
+</div>
+</div>
+<div style="padding: 14px 20px 0">
+<div role="group" aria-label="Capture mode" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); background: #1F2937; border-radius: 10px; padding: 4px">
+<button aria-pressed="true" style="height: 36px; border: none; border-radius: 8px; background: #FFFFFF; color: #14181F; font: inherit; font-size: 13px; font-weight: 600">Guided</button>
+<button style="height: 36px; border: none; border-radius: 8px; background: transparent; color: #E5E7EB; font: inherit; font-size: 13px; font-weight: 600">Quick shoot · sort later</button>
+</div>
+</div>
+<div style="padding: 12px 20px 6px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 12px; color: #9CA3AF">Slope tag</span>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px">
+<button style="height: 44px; border-radius: 10px; border: 1px solid #374151; background: transparent; color: #FFFFFF; font: inherit; font-size: 14px; font-weight: 600">North</button>
+<button aria-pressed="true" style="height: 44px; border-radius: 10px; border: 1px solid #3B82F6; background: #1D4ED8; color: #FFFFFF; font: inherit; font-size: 14px; font-weight: 600">South</button>
+<button style="height: 44px; border-radius: 10px; border: 1px solid #374151; background: transparent; color: #FFFFFF; font: inherit; font-size: 14px; font-weight: 600">East</button>
+<button style="height: 44px; border-radius: 10px; border: 1px solid #374151; background: transparent; color: #FFFFFF; font: inherit; font-size: 14px; font-weight: 600">West</button>
+</div>
+</div>
+<div style="padding: 14px 28px 30px; display: flex; align-items: center; justify-content: space-between">
+<div style="width: 52px; height: 52px; border-radius: 10px; background: #374151; border: 2px solid #FFFFFF; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #D1D5DB">Last</div>
+<a href="#Sort" aria-label="Take photo" style="width: 76px; height: 76px; border-radius: 99px; border: 4px solid #FFFFFF; box-sizing: border-box; display: flex; align-items: center; justify-content: center">
+<span style="width: 60px; height: 60px; border-radius: 99px; background: #FFFFFF"></span>
+</a>
+<button aria-label="Add voice note" style="width: 52px; height: 52px; border-radius: 99px; border: none; background: #374151; display: flex; align-items: center; justify-content: center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5 11a7 7 0 0014 0M12 18v3"></path></svg>
+</button>
+</div>
+</div>
+</section>
+<section class="screen" id="Sort" aria-label="Sort quick shots" hidden>
+
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F6F7F9; font-family: Inter, system-ui, sans-serif; color: #14181F; display: flex; flex-direction: column">
+<header style="display: flex; align-items: center; gap: 4px; padding: 16px 12px 8px">
+<a href="#Capture" aria-label="Back" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#14181F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+</a>
+<div style="display: flex; flex-direction: column">
+<span style="font-size: 16px; font-weight: 600">Sort photos</span>
+<span style="font-size: 12px; color: #4B5563">Claim TX-48213-77 · office or crew lead</span>
+</div>
+</header>
+<div style="padding: 4px 20px 10px">
+<p style="margin: 0; font-size: 13px; color: #4B5563; line-height: 1.45">Crew shot fast in Quick mode. Tap a photo, then tap the slot it belongs in.</p>
+</div>
+<div style="margin: 0 20px 12px; background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 14px; padding: 12px 14px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<span style="font-size: 14px; font-weight: 700">Unsorted · 6</span>
+<button style="height: 36px; padding: 0 12px; border-radius: 8px; border: 1px solid #D1D5DB; background: #FFFFFF; font: inherit; font-size: 13px; font-weight: 600; color: #1D4ED8; display: flex; align-items: center; gap: 6px">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="M21 15l-5-5L5 21"></path></svg>
+Camera roll
+</button>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px">
+
+<button aria-label="Unsorted photo taken 10:51" style="aspect-ratio: 4 / 3; border-radius: 8px; background: #CBD5E1; border: 3px solid #1D4ED8; padding: 0; position: relative">
+<span style="position: absolute; left: 4px; bottom: 4px; font-size: 9px; font-weight: 600; background: #000000B3; color: #FFFFFF; border-radius: 3px; padding: 2px 4px">10:51</span>
+</button>
+
+<button aria-label="Unsorted photo taken 10:52" style="aspect-ratio: 4 / 3; border-radius: 8px; background: #CBD5E1; border: 1px solid #E5E7EB; padding: 0; position: relative">
+<span style="position: absolute; left: 4px; bottom: 4px; font-size: 9px; font-weight: 600; background: #000000B3; color: #FFFFFF; border-radius: 3px; padding: 2px 4px">10:52</span>
+</button>
+
+<button aria-label="Unsorted photo taken 10:53" style="aspect-ratio: 4 / 3; border-radius: 8px; background: #CBD5E1; border: 1px solid #E5E7EB; padding: 0; position: relative">
+<span style="position: absolute; left: 4px; bottom: 4px; font-size: 9px; font-weight: 600; background: #000000B3; color: #FFFFFF; border-radius: 3px; padding: 2px 4px">10:53</span>
+</button>
+
+<button aria-label="Unsorted photo taken 10:55" style="aspect-ratio: 4 / 3; border-radius: 8px; background: #CBD5E1; border: 1px solid #E5E7EB; padding: 0; position: relative">
+<span style="position: absolute; left: 4px; bottom: 4px; font-size: 9px; font-weight: 600; background: #000000B3; color: #FFFFFF; border-radius: 3px; padding: 2px 4px">10:55</span>
+</button>
+
+<button aria-label="Unsorted photo taken 10:56" style="aspect-ratio: 4 / 3; border-radius: 8px; background: #CBD5E1; border: 1px solid #E5E7EB; padding: 0; position: relative">
+<span style="position: absolute; left: 4px; bottom: 4px; font-size: 9px; font-weight: 600; background: #000000B3; color: #FFFFFF; border-radius: 3px; padding: 2px 4px">10:56</span>
+</button>
+
+<button aria-label="Unsorted photo taken 10:58" style="aspect-ratio: 4 / 3; border-radius: 8px; background: #CBD5E1; border: 1px solid #E5E7EB; padding: 0; position: relative">
+<span style="position: absolute; left: 4px; bottom: 4px; font-size: 9px; font-weight: 600; background: #000000B3; color: #FFFFFF; border-radius: 3px; padding: 2px 4px">10:58</span>
+</button>
+
+</div>
+<span style="font-size: 12px; color: #4B5563">Camera-roll photos keep their original GPS and time, so the location check still applies.</span>
+</div>
+<div style="flex: 1; padding: 0 20px; display: flex; flex-direction: column; gap: 8px; overflow: hidden">
+<span style="font-size: 12px; font-weight: 600; color: #4B5563; letter-spacing: 0.04em">EMPTY SLOTS</span>
+
+<button style="min-height: 52px; border-radius: 12px; border: 2px solid #1D4ED8; background: #EFF6FF; font: inherit; text-align: left; padding: 10px 14px; display: flex; align-items: center; gap: 12px">
+<span style="width: 40px; height: 30px; border-radius: 6px; border: 1.5px dashed #9CA3AF; flex-shrink: 0"></span>
+<span style="flex: 1; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 14px; font-weight: 600; color: #14181F">West slope — wide</span>
+<span style="font-size: 12px; color: #4B5563">Suggested: taken facing west at 10:51</span>
+</span>
+</button>
+
+<button style="min-height: 52px; border-radius: 12px; border: 1px solid #E5E7EB; background: #FFFFFF; font: inherit; text-align: left; padding: 10px 14px; display: flex; align-items: center; gap: 12px">
+<span style="width: 40px; height: 30px; border-radius: 6px; border: 1.5px dashed #9CA3AF; flex-shrink: 0"></span>
+<span style="flex: 1; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 14px; font-weight: 600; color: #14181F">Pipe boot — close-up</span>
+<span style="font-size: 12px; color: #4B5563">Flashing + penetrations</span>
+</span>
+</button>
+
+<button style="min-height: 52px; border-radius: 12px; border: 1px solid #E5E7EB; background: #FFFFFF; font: inherit; text-align: left; padding: 10px 14px; display: flex; align-items: center; gap: 12px">
+<span style="width: 40px; height: 30px; border-radius: 6px; border: 1.5px dashed #9CA3AF; flex-shrink: 0"></span>
+<span style="flex: 1; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 14px; font-weight: 600; color: #14181F">Rear elevation</span>
+<span style="font-size: 12px; color: #4B5563">Long shot from the back yard</span>
+</span>
+</button>
+
+<button style="min-height: 52px; border-radius: 12px; border: 1px solid #E5E7EB; background: #FFFFFF; font: inherit; text-align: left; padding: 10px 14px; display: flex; align-items: center; gap: 12px">
+<span style="width: 40px; height: 30px; border-radius: 6px; border: 1.5px dashed #9CA3AF; flex-shrink: 0"></span>
+<span style="flex: 1; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 14px; font-weight: 600; color: #14181F">Attic decking (optional)</span>
+<span style="font-size: 12px; color: #4B5563">Interior / attic</span>
+</span>
+</button>
+
+</div>
+<div style="padding: 14px 20px 28px">
+<a href="#Check" style="height: 52px; border-radius: 12px; background: #1D4ED8; color: #FFFFFF; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; text-decoration: none">Run accuracy check</a>
+</div>
+</div>
+</section>
+<section class="screen" id="Check" aria-label="Accuracy check" hidden>
+
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F6F7F9; font-family: Inter, system-ui, sans-serif; color: #14181F; display: flex; flex-direction: column">
+<header style="display: flex; align-items: center; gap: 4px; padding: 16px 12px 8px">
+<a href="#Sort" aria-label="Back" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#14181F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+</a>
+<div style="display: flex; flex-direction: column">
+<span style="font-size: 16px; font-weight: 600">Pre-claim package</span>
+<span style="font-size: 12px; color: #4B5563">Claim TX-48213-77</span>
+</div>
+</header>
+<div style="margin: 8px 20px 14px; background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 14px; padding: 16px; display: flex; align-items: center; gap: 16px">
+<div style="width: 64px; height: 64px; border-radius: 99px; border: 6px solid #C2410C; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 700; color: #C2410C; flex-shrink: 0">2</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 18px; font-weight: 700; letter-spacing: -0.01em">2 items block sending</span>
+<span style="font-size: 13px; color: #4B5563; line-height: 1.4">Adjusters push back on incomplete files. Fix these and the package is ready.</span>
+</div>
+</div>
+<div style="flex: 1; padding: 0 20px; display: flex; flex-direction: column; gap: 8px; overflow: hidden">
+<span style="font-size: 12px; font-weight: 600; color: #9A3412; letter-spacing: 0.04em">MUST FIX</span>
+
+<div style="background: #FFF7ED; border: 1px solid #FED7AA; border-radius: 12px; padding: 12px 14px; display: flex; align-items: center; gap: 12px">
+<div style="flex: 1; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 14px; font-weight: 600; color: #7C2D12">Missing: West slope wide shot</span>
+<span style="font-size: 12px; color: #9A3412">Every slope needs one wide shot</span>
+</div>
+<a href="#Capture" style="height: 36px; padding: 0 12px; border-radius: 8px; background: #C2410C; color: #FFFFFF; font-size: 13px; font-weight: 600; display: flex; align-items: center; text-decoration: none">Shoot</a>
+</div>
+
+<div style="background: #FFF7ED; border: 1px solid #FED7AA; border-radius: 12px; padding: 12px 14px; display: flex; align-items: center; gap: 12px">
+<div style="flex: 1; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 14px; font-weight: 600; color: #7C2D12">Missing: Pipe boot close-up</span>
+<span style="font-size: 12px; color: #9A3412">Flashing + penetrations is 1 of 2</span>
+</div>
+<a href="#Capture" style="height: 36px; padding: 0 12px; border-radius: 8px; background: #C2410C; color: #FFFFFF; font-size: 13px; font-weight: 600; display: flex; align-items: center; text-decoration: none">Shoot</a>
+</div>
+
+<span style="font-size: 12px; font-weight: 600; color: #166534; letter-spacing: 0.04em; margin-top: 8px">PASSED</span>
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 4px 14px">
+
+<div style="display: flex; align-items: center; gap: 10px; padding: 9px 0">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
+<span style="font-size: 13px">Claim # and address match on every page</span>
+</div>
+
+<div style="display: flex; align-items: center; gap: 10px; padding: 9px 0">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
+<span style="font-size: 13px">All photos GPS-tagged at this property</span>
+</div>
+
+<div style="display: flex; align-items: center; gap: 10px; padding: 9px 0">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
+<span style="font-size: 13px">All photos taken after the 10/22 storm date</span>
+</div>
+
+<div style="display: flex; align-items: center; gap: 10px; padding: 9px 0">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
+<span style="font-size: 13px">Every photo tagged to a slope or area</span>
+</div>
+
+<div style="display: flex; align-items: center; gap: 10px; padding: 9px 0">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
+<span style="font-size: 13px">Adjuster email on file</span>
+</div>
+
+</div>
+</div>
+<div style="padding: 16px 20px 28px; display: flex; flex-direction: column; gap: 10px">
+<button disabled style="height: 52px; border-radius: 12px; border: none; background: #E5E7EB; color: #4B5563; font: inherit; font-size: 16px; font-weight: 600">Fix 2 items to send</button>
+<a href="#Pdf" style="height: 44px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; text-decoration: none">Preview the PDF the adjuster gets</a>
+</div>
+</div>
+</section>
+<section class="screen" id="Pdf" aria-label="Adjuster PDF" hidden>
+
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #E5E7EB; font-family: Inter, system-ui, sans-serif; color: #14181F; display: flex; flex-direction: column">
+<header style="display: flex; align-items: center; gap: 4px; padding: 16px 12px 8px; background: #F6F7F9">
+<a href="#Check" aria-label="Back" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#14181F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+</a>
+<div style="display: flex; flex-direction: column">
+<span style="font-size: 16px; font-weight: 600">PreClaim_TX-48213-77.pdf</span>
+<span style="font-size: 12px; color: #4B5563">Page 1–2 of 12 · as the adjuster sees it</span>
+</div>
+</header>
+<div style="flex: 1; padding: 14px 18px; display: flex; flex-direction: column; gap: 12px; overflow: hidden">
+<div style="background: #FFFFFF; border-radius: 4px; padding: 16px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<div style="width: 64px; height: 24px; border-radius: 4px; background: #E5E7EB; font-size: 9px; color: #4B5563; display: flex; align-items: center; justify-content: center">YOUR LOGO</div>
+<span style="font-size: 10px; color: #4B5563">Prepared 11/07/2026</span>
+</div>
+<span style="font-size: 16px; font-weight: 700">Pre-Claim Roof Documentation</span>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 12px; font-size: 10px">
+
+<div style="display: flex; flex-direction: column"><span style="color: #4B5563">Property</span><span style="font-weight: 600">1418 Pecan Hollow Dr, Plano TX</span></div>
+
+<div style="display: flex; flex-direction: column"><span style="color: #4B5563">Claim #</span><span style="font-weight: 600">TX-48213-77</span></div>
+
+<div style="display: flex; flex-direction: column"><span style="color: #4B5563">Homeowner</span><span style="font-weight: 600">Dana Whitfield</span></div>
+
+<div style="display: flex; flex-direction: column"><span style="color: #4B5563">Carrier</span><span style="font-weight: 600">[Carrier]</span></div>
+
+<div style="display: flex; flex-direction: column"><span style="color: #4B5563">Date of loss</span><span style="font-weight: 600">10/22/2026 · hail</span></div>
+
+<div style="display: flex; flex-direction: column"><span style="color: #4B5563">Adjuster</span><span style="font-weight: 600">M. Okafor</span></div>
+
+<div style="display: flex; flex-direction: column"><span style="color: #4B5563">Roof</span><span style="font-weight: 600">Comp shingle · 6 slopes</span></div>
+
+<div style="display: flex; flex-direction: column"><span style="color: #4B5563">Photos</span><span style="font-weight: 600">18 · GPS + time verified</span></div>
+
+</div>
+<div style="font-size: 10px; font-weight: 600; color: #4B5563; letter-spacing: 0.04em; margin-top: 4px">CONTENTS</div>
+<div style="font-size: 10px; line-height: 1.6; color: #374151; white-space: pre-line">1. Elevations (4)   2. Slopes N/S/E/W (6)
+3. Test squares + hail hits (3)   4. Soft metals (2)
+5. Flashing + penetrations (2)   6. Notes + storm data</div>
+</div>
+<div style="background: #FFFFFF; border-radius: 4px; padding: 16px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 12px; font-weight: 700">2. Slopes</span>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+
+<div style="display: flex; flex-direction: column; gap: 4px">
+<div style="aspect-ratio: 4 / 3; background: #CBD5E1; border-radius: 2px; position: relative">
+<span style="position: absolute; left: 4px; bottom: 4px; background: #000000B3; color: #FFFFFF; font-size: 7px; padding: 2px 4px; border-radius: 2px">33.0198, -96.6989 · 10:31 · Jonas Y.</span>
+</div>
+<span style="font-size: 9px; font-weight: 600">North slope — wide</span>
+<span style="font-size: 9px; color: #4B5563; line-height: 1.35">Granule loss across field; 9 hits in test square</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 4px">
+<div style="aspect-ratio: 4 / 3; background: #CBD5E1; border-radius: 2px; position: relative">
+<span style="position: absolute; left: 4px; bottom: 4px; background: #000000B3; color: #FFFFFF; font-size: 7px; padding: 2px 4px; border-radius: 2px">33.0198, -96.6990 · 10:42 · Jonas Y.</span>
+</div>
+<span style="font-size: 9px; font-weight: 600">South slope — wide</span>
+<span style="font-size: 9px; color: #4B5563; line-height: 1.35">Ridge to gutter; creased tabs near valley</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 4px">
+<div style="aspect-ratio: 4 / 3; background: #CBD5E1; border-radius: 2px; position: relative">
+<span style="position: absolute; left: 4px; bottom: 4px; background: #000000B3; color: #FFFFFF; font-size: 7px; padding: 2px 4px; border-radius: 2px">33.0197, -96.6988 · 10:48 · Eli M.</span>
+</div>
+<span style="font-size: 9px; font-weight: 600">East slope — test square</span>
+<span style="font-size: 9px; color: #4B5563; line-height: 1.35">10×10 ft chalked; 11 hits marked</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 4px">
+<div style="aspect-ratio: 4 / 3; background: #CBD5E1; border-radius: 2px; position: relative">
+<span style="position: absolute; left: 4px; bottom: 4px; background: #000000B3; color: #FFFFFF; font-size: 7px; padding: 2px 4px; border-radius: 2px">33.0198, -96.6991 · 10:55 · Jonas Y.</span>
+</div>
+<span style="font-size: 9px; font-weight: 600">West slope — wide</span>
+<span style="font-size: 9px; color: #4B5563; line-height: 1.35">Bruising visible at low angle light</span>
+</div>
+
+</div>
+</div>
+</div>
+<div style="padding: 12px 20px 28px; background: #F6F7F9; display: flex; flex-direction: column; gap: 8px">
+<a href="#Send" style="height: 52px; border-radius: 12px; background: #1D4ED8; color: #FFFFFF; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; text-decoration: none">Looks right · write the email</a>
+</div>
+</div>
+</section>
+<section class="screen" id="Send" aria-label="Email adjuster" hidden>
+
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F6F7F9; font-family: Inter, system-ui, sans-serif; color: #14181F; display: flex; flex-direction: column">
+<header style="display: flex; align-items: center; gap: 4px; padding: 16px 12px 8px">
+<a href="#Pdf" aria-label="Back" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#14181F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+</a>
+<span style="font-size: 16px; font-weight: 600">Send to adjuster</span>
+</header>
+<div style="margin: 4px 20px 12px; display: flex; align-items: center; gap: 10px; padding: 12px 14px; background: #ECFDF5; border-radius: 10px">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
+<span style="font-size: 13px; font-weight: 600; color: #14532D">All 18 shots in · every check passed</span>
+</div>
+<div style="flex: 1; margin: 0 20px; background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 14px; display: flex; flex-direction: column; overflow: hidden">
+<div style="padding: 12px 16px; border-bottom: 1px solid #F3F4F6; display: flex; gap: 10px; font-size: 13px"><span style="color: #4B5563; width: 52px">To</span><span style="font-weight: 600">M. Okafor &lt;m.okafor@[carrier].com&gt;</span></div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #F3F4F6; display: flex; gap: 10px; font-size: 13px"><span style="color: #4B5563; width: 52px">From</span><span>office@[yourroofing].com</span></div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #F3F4F6; display: flex; gap: 10px; font-size: 13px"><span style="color: #4B5563; width: 52px">Subject</span><span style="font-weight: 600; line-height: 1.4">Claim TX-48213-77 · 1418 Pecan Hollow Dr · Pre-claim documentation</span></div>
+<div style="padding: 14px 16px; font-size: 13px; line-height: 1.55; color: #374151; white-space: pre-line">Hello M. Okafor,
+
+Attached is the pre-claim documentation for claim TX-48213-77 (hail, 10/22/2026): 18 GPS- and time-stamped photos organized by elevation and slope, test squares and inspection notes.
+
+The full-resolution gallery is at the link below.
+
+[Your name] · [Roofing company] · [Phone]</div>
+<div style="margin: 0 16px 16px; border: 1px solid #E5E7EB; border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; align-items: center; gap: 10px">
+<div style="width: 36px; height: 44px; border-radius: 6px; background: #FEE2E2; color: #991B1B; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center">PDF</div>
+<div style="display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 13px; font-weight: 600">PreClaim_TX-48213-77.pdf</span>
+<span style="font-size: 12px; color: #4B5563">12 pages · 18 photos · 6.1 MB</span>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 4px">
+
+<div style="aspect-ratio: 1; border-radius: 4px; background: #CBD5E1; display: flex; align-items: flex-end; justify-content: center; font-size: 9px; font-weight: 600; color: #1F2937; padding-bottom: 3px; box-sizing: border-box">Front</div>
+
+<div style="aspect-ratio: 1; border-radius: 4px; background: #CBD5E1; display: flex; align-items: flex-end; justify-content: center; font-size: 9px; font-weight: 600; color: #1F2937; padding-bottom: 3px; box-sizing: border-box">Rear</div>
+
+<div style="aspect-ratio: 1; border-radius: 4px; background: #CBD5E1; display: flex; align-items: flex-end; justify-content: center; font-size: 9px; font-weight: 600; color: #1F2937; padding-bottom: 3px; box-sizing: border-box">N</div>
+
+<div style="aspect-ratio: 1; border-radius: 4px; background: #CBD5E1; display: flex; align-items: flex-end; justify-content: center; font-size: 9px; font-weight: 600; color: #1F2937; padding-bottom: 3px; box-sizing: border-box">S</div>
+
+<div style="aspect-ratio: 1; border-radius: 4px; background: #CBD5E1; display: flex; align-items: flex-end; justify-content: center; font-size: 9px; font-weight: 600; color: #1F2937; padding-bottom: 3px; box-sizing: border-box">E</div>
+
+<div style="aspect-ratio: 1; border-radius: 4px; background: #CBD5E1; display: flex; align-items: flex-end; justify-content: center; font-size: 9px; font-weight: 600; color: #1F2937; padding-bottom: 3px; box-sizing: border-box">W</div>
+
+</div>
+<span style="font-size: 12px; color: #1D4ED8">claimsnap.app/p/TX-48213-77 · gallery link</span>
+</div>
+</div>
+<div style="padding: 16px 20px 28px">
+<a href="#Gallery" style="height: 52px; border-radius: 12px; background: #1D4ED8; color: #FFFFFF; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13"></path><path d="M22 2l-7 20-4-9-9-4z"></path></svg>
+Send to adjuster
+</a>
+</div>
+</div>
+</section>
+<section class="screen" id="Gallery" aria-label="Adjuster gallery (web)" hidden>
+
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #FFFFFF; font-family: Inter, system-ui, sans-serif; color: #14181F; display: flex; flex-direction: column">
+<div style="padding: 10px 16px; background: #F3F4F6; border-bottom: 1px solid #E5E7EB; display: flex; align-items: center; gap: 8px">
+<a href="#Send" aria-label="Back to app" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+</a>
+<div style="flex: 1; height: 32px; border-radius: 8px; background: #FFFFFF; border: 1px solid #E5E7EB; display: flex; align-items: center; gap: 6px; padding: 0 10px; font-size: 12px; color: #374151">
+<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 018 0v4"></path></svg>
+claimsnap.app/p/TX-48213-77
+</div>
+</div>
+<div style="flex: 1; overflow: hidden; display: flex; flex-direction: column">
+<div style="padding: 16px 18px 12px; border-bottom: 1px solid #E5E7EB; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; align-items: center; justify-content: space-between">
+<div style="width: 72px; height: 26px; border-radius: 4px; background: #E5E7EB; font-size: 9px; color: #4B5563; display: flex; align-items: center; justify-content: center">ROOFER LOGO</div>
+<span style="font-size: 11px; color: #4B5563">Shared with M. Okafor · Nov 7</span>
+</div>
+<span style="font-size: 20px; font-weight: 700; letter-spacing: -0.01em">Pre-claim photos · Claim TX-48213-77</span>
+<span style="font-size: 12px; color: #4B5563; line-height: 1.5">1418 Pecan Hollow Dr, Plano TX · Hail, date of loss 10/22/2026 · 18 photos, all GPS-verified at this address</span>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+<button style="height: 44px; border-radius: 10px; border: none; background: #1D4ED8; color: #FFFFFF; font: inherit; font-size: 13px; font-weight: 600">Download PDF</button>
+<button style="height: 44px; border-radius: 10px; border: 1px solid #D1D5DB; background: #FFFFFF; color: #14181F; font: inherit; font-size: 13px; font-weight: 600">Originals (.zip)</button>
+</div>
+<span style="font-size: 11px; color: #4B5563">Originals are full resolution with GPS and time data intact.</span>
+</div>
+<div role="tablist" aria-label="Sections" style="display: flex; gap: 6px; padding: 10px 18px; border-bottom: 1px solid #E5E7EB; overflow-x: auto">
+
+<button role="tab" aria-selected="false" style="height: 32px; padding: 0 10px; border-radius: 99px; border: 1px solid #D1D5DB; background: #FFFFFF; color: #374151; font: inherit; font-size: 12px; font-weight: 600; white-space: nowrap">Elevations 4</button>
+
+<button role="tab" aria-selected="true" style="height: 32px; padding: 0 10px; border-radius: 99px; border: 1px solid #14181F; background: #14181F; color: #FFFFFF; font: inherit; font-size: 12px; font-weight: 600; white-space: nowrap">Slopes 6</button>
+
+<button role="tab" aria-selected="false" style="height: 32px; padding: 0 10px; border-radius: 99px; border: 1px solid #D1D5DB; background: #FFFFFF; color: #374151; font: inherit; font-size: 12px; font-weight: 600; white-space: nowrap">Hits 3</button>
+
+<button role="tab" aria-selected="false" style="height: 32px; padding: 0 10px; border-radius: 99px; border: 1px solid #D1D5DB; background: #FFFFFF; color: #374151; font: inherit; font-size: 12px; font-weight: 600; white-space: nowrap">Metals 2</button>
+
+<button role="tab" aria-selected="false" style="height: 32px; padding: 0 10px; border-radius: 99px; border: 1px solid #D1D5DB; background: #FFFFFF; color: #374151; font: inherit; font-size: 12px; font-weight: 600; white-space: nowrap">Flashing 2</button>
+
+</div>
+<div style="padding: 12px 18px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 14px; font-weight: 700">2. Slopes <span style="font-weight: 500; color: #4B5563">· 6 photos</span></span>
+
+<div style="display: flex; gap: 12px">
+<div style="width: 132px; aspect-ratio: 4 / 3; border-radius: 6px; background: #CBD5E1; flex-shrink: 0"></div>
+<div style="display: flex; flex-direction: column; gap: 4px; min-width: 0">
+<span style="font-size: 13px; font-weight: 600">North slope — wide</span>
+<span style="font-size: 12px; color: #374151; line-height: 1.4">Granule loss across field; 9 hits in test square</span>
+<span style="font-size: 11px; color: #4B5563; line-height: 1.4">33.0198, -96.6989 · Nov 7, 10:31 AM · Jonas Y.</span>
+</div>
+</div>
+
+<div style="display: flex; gap: 12px">
+<div style="width: 132px; aspect-ratio: 4 / 3; border-radius: 6px; background: #CBD5E1; flex-shrink: 0"></div>
+<div style="display: flex; flex-direction: column; gap: 4px; min-width: 0">
+<span style="font-size: 13px; font-weight: 600">South slope — wide</span>
+<span style="font-size: 12px; color: #374151; line-height: 1.4">Ridge to gutter; creased tabs near valley</span>
+<span style="font-size: 11px; color: #4B5563; line-height: 1.4">33.0198, -96.6990 · Nov 7, 10:42 AM · Jonas Y.</span>
+</div>
+</div>
+
+<div style="display: flex; gap: 12px">
+<div style="width: 132px; aspect-ratio: 4 / 3; border-radius: 6px; background: #CBD5E1; flex-shrink: 0"></div>
+<div style="display: flex; flex-direction: column; gap: 4px; min-width: 0">
+<span style="font-size: 13px; font-weight: 600">East slope — wide</span>
+<span style="font-size: 12px; color: #374151; line-height: 1.4">Bruising at low-angle light; gutter dents below</span>
+<span style="font-size: 11px; color: #4B5563; line-height: 1.4">33.0197, -96.6988 · Nov 7, 10:46 AM · Eli M.</span>
+</div>
+</div>
+
+</div>
+</div>
+<div style="padding: 12px 18px 22px; border-top: 1px solid #E5E7EB; display: flex; justify-content: space-between; align-items: center; background: #F9FAFB">
+<span style="font-size: 11px; color: #4B5563">Link expires Feb 5, 2027</span>
+<a href="#Supplement" style="font-size: 13px; font-weight: 600; text-decoration: none">Back in the app →</a>
+</div>
+</div>
+</section>
+<section class="screen" id="Supplement" aria-label="Supplement" hidden>
+
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F6F7F9; font-family: Inter, system-ui, sans-serif; color: #14181F; display: flex; flex-direction: column">
+<header style="display: flex; align-items: center; gap: 4px; padding: 16px 12px 8px">
+<a href="#Home" aria-label="Back" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#14181F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+</a>
+<div style="display: flex; flex-direction: column">
+<span style="font-size: 16px; font-weight: 600">1418 Pecan Hollow Dr</span>
+<span style="font-size: 12px; color: #4B5563">Claim TX-48213-77 · After adjuster visit</span>
+</div>
+</header>
+<div style="padding: 4px 20px 12px">
+<h1 style="margin: 0; font-size: 24px; font-weight: 700; letter-spacing: -0.02em">Supplement</h1>
+<p style="margin: 6px 0 0; font-size: 14px; color: #4B5563; line-height: 1.45">Items the adjuster's scope missed. Each one needs its own photo proof.</p>
+</div>
+<div style="margin: 0 20px 12px; background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 12px; font-weight: 600; color: #4B5563; letter-spacing: 0.04em">ADJUSTER VISIT · NOV 10</span>
+<span style="font-size: 13px; line-height: 1.45">Scope approved for shingles and felt. Decking and drip edge not included.</span>
+</div>
+<div style="flex: 1; padding: 0 20px; display: flex; flex-direction: column; gap: 10px; overflow: hidden">
+
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<span style="font-size: 15px; font-weight: 600">Decking replacement</span>
+<span style="font-size: 12px; font-weight: 600; color: #15803D">4 photos</span>
+</div>
+<span style="font-size: 12px; color: #4B5563">Rotted boards found at tear-off test, north slope</span>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px">
+
+<div style="aspect-ratio: 1; border-radius: 6px; background: #CBD5E1"></div>
+
+<div style="aspect-ratio: 1; border-radius: 6px; background: #CBD5E1"></div>
+
+<div style="aspect-ratio: 1; border-radius: 6px; background: #CBD5E1"></div>
+
+<div style="aspect-ratio: 1; border-radius: 6px; background: #CBD5E1"></div>
+
+</div>
+</div>
+
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<span style="font-size: 15px; font-weight: 600">Drip edge (code item)</span>
+<span style="font-size: 12px; font-weight: 600; color: #15803D">2 photos</span>
+</div>
+<span style="font-size: 12px; color: #4B5563">Required by local code; none installed today</span>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px">
+
+<div style="aspect-ratio: 1; border-radius: 6px; background: #CBD5E1"></div>
+
+<div style="aspect-ratio: 1; border-radius: 6px; background: #CBD5E1"></div>
+
+</div>
+</div>
+
+<button style="height: 48px; border-radius: 12px; border: 1px dashed #9CA3AF; background: transparent; font: inherit; font-size: 14px; font-weight: 600; color: #1D4ED8">Add a supplement item</button>
+</div>
+<div style="padding: 14px 20px 28px">
+<a href="#Build" style="height: 52px; border-radius: 12px; background: #1D4ED8; color: #FFFFFF; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; text-decoration: none">Email supplement to M. Okafor</a>
+</div>
+</div>
+</section>
+<section class="screen" id="Build" aria-label="Completion photos" hidden>
+
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F6F7F9; font-family: Inter, system-ui, sans-serif; color: #14181F; display: flex; flex-direction: column">
+<header style="display: flex; align-items: center; gap: 4px; padding: 16px 12px 8px">
+<a href="#Supplement" aria-label="Back" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#14181F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+</a>
+<div style="display: flex; flex-direction: column">
+<span style="font-size: 16px; font-weight: 600">1418 Pecan Hollow Dr</span>
+<span style="font-size: 12px; color: #4B5563">Claim TX-48213-77 · Build</span>
+</div>
+</header>
+<div style="padding: 8px 20px 14px; display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; justify-content: space-between; align-items: baseline">
+<span style="font-size: 22px; font-weight: 700; letter-spacing: -0.02em">Completion photos</span>
+<span style="font-size: 14px; font-weight: 600; color: #1D4ED8">5 of 6</span>
+</div>
+<div style="height: 8px; background: #E5E7EB; border-radius: 99px; overflow: hidden">
+<div style="width: 83%; height: 8px; background: #1D4ED8; border-radius: 99px"></div>
+</div>
+<span style="font-size: 13px; color: #4B5563; line-height: 1.4">The crew shoots each stage. These prove the work matches the approved scope.</span>
+</div>
+<div style="flex: 1; padding: 0 20px; display: flex; flex-direction: column; gap: 10px; overflow: hidden">
+
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 10px 12px; display: flex; align-items: center; gap: 12px">
+<div style="display: flex; gap: 4px">
+<div style="width: 44px; height: 44px; border-radius: 6px; background: #CBD5E1; font-size: 8px; font-weight: 600; color: #1F2937; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 3px; box-sizing: border-box">BEFORE</div>
+<div style="width: 44px; height: 44px; border-radius: 6px; background: #BFDBFE; font-size: 8px; font-weight: 600; color: #1F2937; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 3px; box-sizing: border-box">AFTER</div>
+</div>
+<div style="flex: 1; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 14px; font-weight: 600">Tear-off</span>
+<span style="font-size: 12px; color: #15803D">Done · 3 photos</span>
+</div>
+</div>
+
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 10px 12px; display: flex; align-items: center; gap: 12px">
+<div style="display: flex; gap: 4px">
+<div style="width: 44px; height: 44px; border-radius: 6px; background: #CBD5E1; font-size: 8px; font-weight: 600; color: #1F2937; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 3px; box-sizing: border-box">BEFORE</div>
+<div style="width: 44px; height: 44px; border-radius: 6px; background: #BFDBFE; font-size: 8px; font-weight: 600; color: #1F2937; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 3px; box-sizing: border-box">AFTER</div>
+</div>
+<div style="flex: 1; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 14px; font-weight: 600">Decking (replaced boards marked)</span>
+<span style="font-size: 12px; color: #15803D">Done · 4 photos</span>
+</div>
+</div>
+
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 10px 12px; display: flex; align-items: center; gap: 12px">
+<div style="display: flex; gap: 4px">
+<div style="width: 44px; height: 44px; border-radius: 6px; background: #CBD5E1; font-size: 8px; font-weight: 600; color: #1F2937; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 3px; box-sizing: border-box">BEFORE</div>
+<div style="width: 44px; height: 44px; border-radius: 6px; background: #BFDBFE; font-size: 8px; font-weight: 600; color: #1F2937; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 3px; box-sizing: border-box">AFTER</div>
+</div>
+<div style="flex: 1; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 14px; font-weight: 600">Underlayment + ice &amp; water</span>
+<span style="font-size: 12px; color: #15803D">Done · 3 photos</span>
+</div>
+</div>
+
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 10px 12px; display: flex; align-items: center; gap: 12px">
+<div style="display: flex; gap: 4px">
+<div style="width: 44px; height: 44px; border-radius: 6px; background: #CBD5E1; font-size: 8px; font-weight: 600; color: #1F2937; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 3px; box-sizing: border-box">BEFORE</div>
+<div style="width: 44px; height: 44px; border-radius: 6px; background: #BFDBFE; font-size: 8px; font-weight: 600; color: #1F2937; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 3px; box-sizing: border-box">AFTER</div>
+</div>
+<div style="flex: 1; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 14px; font-weight: 600">Flashing + pipe boots</span>
+<span style="font-size: 12px; color: #15803D">Done · 4 photos</span>
+</div>
+</div>
+
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 10px 12px; display: flex; align-items: center; gap: 12px">
+<div style="display: flex; gap: 4px">
+<div style="width: 44px; height: 44px; border-radius: 6px; background: #CBD5E1; font-size: 8px; font-weight: 600; color: #1F2937; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 3px; box-sizing: border-box">BEFORE</div>
+<div style="width: 44px; height: 44px; border-radius: 6px; background: #BFDBFE; font-size: 8px; font-weight: 600; color: #1F2937; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 3px; box-sizing: border-box">AFTER</div>
+</div>
+<div style="flex: 1; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 14px; font-weight: 600">Each slope, finished</span>
+<span style="font-size: 12px; color: #15803D">Done · 6 photos</span>
+</div>
+</div>
+
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 10px 12px; display: flex; align-items: center; gap: 12px">
+<div style="display: flex; gap: 4px">
+<div style="width: 44px; height: 44px; border-radius: 6px; background: #CBD5E1; font-size: 8px; font-weight: 600; color: #1F2937; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 3px; box-sizing: border-box">BEFORE</div>
+<div style="width: 44px; height: 44px; border-radius: 6px; background: #F3F4F6; font-size: 8px; font-weight: 600; color: #1F2937; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 3px; box-sizing: border-box">AFTER</div>
+</div>
+<div style="flex: 1; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 14px; font-weight: 600">Ridge cap + final wide shots</span>
+<span style="font-size: 12px; color: #C2410C">Needed to complete</span>
+</div>
+</div>
+
+</div>
+<div style="padding: 16px 20px 28px">
+<a href="#Signoff" style="height: 52px; border-radius: 12px; background: #1D4ED8; color: #FFFFFF; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; text-decoration: none">Shoot final: ridge cap</a>
+</div>
+</div>
+</section>
+<section class="screen" id="Signoff" aria-label="Invoice + certificate" hidden>
+
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F6F7F9; font-family: Inter, system-ui, sans-serif; color: #14181F; display: flex; flex-direction: column">
+<header style="display: flex; align-items: center; gap: 4px; padding: 16px 12px 8px">
+<a href="#Build" aria-label="Back" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#14181F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+</a>
+<div style="display: flex; flex-direction: column">
+<span style="font-size: 16px; font-weight: 600">Post-claim package</span>
+<span style="font-size: 12px; color: #4B5563">Claim TX-48213-77</span>
+</div>
+</header>
+<div style="flex: 1; padding: 8px 20px 0; display: flex; flex-direction: column; gap: 12px; overflow: hidden">
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<span style="font-size: 15px; font-weight: 700">Invoice</span>
+<span style="font-size: 12px; color: #4B5563">Built from approved scope</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; font-size: 13px">
+<div style="display: flex; justify-content: space-between"><span>Roof replacement (approved)</span><span>[Amount]</span></div>
+<div style="display: flex; justify-content: space-between"><span>Approved supplement</span><span>[Amount]</span></div>
+<div style="display: flex; justify-content: space-between; color: #4B5563"><span>Less paid to date</span><span>[Amount]</span></div>
+<div style="height: 1px; background: #E5E7EB"></div>
+<div style="display: flex; justify-content: space-between; font-weight: 700"><span>Recoverable depreciation due</span><span>[Amount]</span></div>
+</div>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 15px; font-weight: 700">Certificate of completion</span>
+<p style="margin: 0; font-size: 13px; line-height: 1.5; color: #374151">Work at 1418 Pecan Hollow Dr was completed per the approved scope on 11/20/2026. Completion photos are attached.</p>
+<div style="border: 1px dashed #9CA3AF; border-radius: 10px; height: 72px; display: flex; align-items: center; justify-content: center; font-family: Caveat, cursive; font-size: 30px; color: #1E3A8A">Dana Whitfield</div>
+<div style="display: flex; align-items: center; gap: 8px; font-size: 12px; color: #15803D; font-weight: 600">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
+Signed by homeowner on site · 11/20/2026 4:18 PM
+</div>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 14px; padding: 12px 16px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 12px; font-weight: 600; color: #4B5563; letter-spacing: 0.04em">PACKAGE CONTENTS</span>
+
+<div style="display: flex; align-items: center; gap: 10px; font-size: 13px">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
+<span>Invoice</span>
+</div>
+
+<div style="display: flex; align-items: center; gap: 10px; font-size: 13px">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
+<span>Certificate of completion (signed)</span>
+</div>
+
+<div style="display: flex; align-items: center; gap: 10px; font-size: 13px">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
+<span>20 completion photos by stage</span>
+</div>
+
+<div style="display: flex; align-items: center; gap: 10px; font-size: 13px">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
+<span>Pre-claim photos for comparison</span>
+</div>
+
+</div>
+</div>
+<div style="padding: 16px 20px 28px">
+<a href="#Timeline" style="height: 52px; border-radius: 12px; background: #1D4ED8; color: #FFFFFF; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; text-decoration: none">Email package to M. Okafor</a>
+</div>
+</div>
+</section>
+<section class="screen" id="Timeline" aria-label="Claim record" hidden>
+
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F6F7F9; font-family: Inter, system-ui, sans-serif; color: #14181F; display: flex; flex-direction: column">
+<header style="display: flex; align-items: center; gap: 4px; padding: 16px 12px 8px">
+<a href="#Home" aria-label="Back to claims" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#14181F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+</a>
+<div style="display: flex; flex-direction: column">
+<span style="font-size: 16px; font-weight: 600">1418 Pecan Hollow Dr</span>
+<span style="font-size: 12px; color: #4B5563">Claim TX-48213-77 · Adjuster M. Okafor</span>
+</div>
+</header>
+<div style="padding: 8px 20px 12px">
+<span style="font-size: 22px; font-weight: 700; letter-spacing: -0.02em">Claim record</span>
+<p style="margin: 4px 0 0; font-size: 13px; color: #4B5563">Every package sent, with proof of when. Your answer if a claim is disputed.</p>
+</div>
+<div style="flex: 1; padding: 4px 20px 0; overflow: hidden">
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 14px; padding: 12px 16px">
+
+<div style="display: flex; gap: 12px">
+<div style="display: flex; flex-direction: column; align-items: center; width: 14px">
+<div style="width: 12px; height: 12px; border-radius: 99px; margin-top: 4px; background: #FFFFFF; border: 2px solid #C2410C; box-sizing: border-box"></div>
+<div style="flex: 1; width: 2px; background: #E5E7EB"></div>
+</div>
+<div style="flex: 1; display: flex; flex-direction: column; gap: 2px; padding-bottom: 12px">
+<div style="display: flex; justify-content: space-between; gap: 8px">
+<span style="font-size: 14px; font-weight: 600; color: #9A3412">Depreciation release</span>
+<span style="font-size: 12px; color: #4B5563; white-space: nowrap">Waiting</span>
+</div>
+<span style="font-size: 12px; color: #4B5563">Auto-reminder to adjuster in 5 days</span>
+</div>
+</div>
+
+<div style="display: flex; gap: 12px">
+<div style="display: flex; flex-direction: column; align-items: center; width: 14px">
+<div style="width: 12px; height: 12px; border-radius: 99px; margin-top: 4px; background: #1D4ED8; border: 2px solid #1D4ED8; box-sizing: border-box"></div>
+<div style="flex: 1; width: 2px; background: #E5E7EB"></div>
+</div>
+<div style="flex: 1; display: flex; flex-direction: column; gap: 2px; padding-bottom: 12px">
+<div style="display: flex; justify-content: space-between; gap: 8px">
+<span style="font-size: 14px; font-weight: 600; color: #1D4ED8">Post-claim package emailed</span>
+<span style="font-size: 12px; color: #4B5563; white-space: nowrap">Nov 20</span>
+</div>
+<span style="font-size: 12px; color: #4B5563">Invoice, signed certificate, 20 photos</span>
+</div>
+</div>
+
+<div style="display: flex; gap: 12px">
+<div style="display: flex; flex-direction: column; align-items: center; width: 14px">
+<div style="width: 12px; height: 12px; border-radius: 99px; margin-top: 4px; background: #15803D; border: 2px solid #15803D; box-sizing: border-box"></div>
+<div style="flex: 1; width: 2px; background: #E5E7EB"></div>
+</div>
+<div style="flex: 1; display: flex; flex-direction: column; gap: 2px; padding-bottom: 12px">
+<div style="display: flex; justify-content: space-between; gap: 8px">
+<span style="font-size: 14px; font-weight: 600; color: #14181F">Build complete</span>
+<span style="font-size: 12px; color: #4B5563; white-space: nowrap">Nov 20</span>
+</div>
+<span style="font-size: 12px; color: #4B5563">All 6 stages photographed</span>
+</div>
+</div>
+
+<div style="display: flex; gap: 12px">
+<div style="display: flex; flex-direction: column; align-items: center; width: 14px">
+<div style="width: 12px; height: 12px; border-radius: 99px; margin-top: 4px; background: #15803D; border: 2px solid #15803D; box-sizing: border-box"></div>
+<div style="flex: 1; width: 2px; background: #E5E7EB"></div>
+</div>
+<div style="flex: 1; display: flex; flex-direction: column; gap: 2px; padding-bottom: 12px">
+<div style="display: flex; justify-content: space-between; gap: 8px">
+<span style="font-size: 14px; font-weight: 600; color: #14181F">Claim approved</span>
+<span style="font-size: 12px; color: #4B5563; white-space: nowrap">Nov 13</span>
+</div>
+<span style="font-size: 12px; color: #4B5563">Supplement for decking approved</span>
+</div>
+</div>
+
+<div style="display: flex; gap: 12px">
+<div style="display: flex; flex-direction: column; align-items: center; width: 14px">
+<div style="width: 12px; height: 12px; border-radius: 99px; margin-top: 4px; background: #1D4ED8; border: 2px solid #1D4ED8; box-sizing: border-box"></div>
+<div style="flex: 1; width: 2px; background: #E5E7EB"></div>
+</div>
+<div style="flex: 1; display: flex; flex-direction: column; gap: 2px; padding-bottom: 12px">
+<div style="display: flex; justify-content: space-between; gap: 8px">
+<span style="font-size: 14px; font-weight: 600; color: #1D4ED8">Supplement emailed</span>
+<span style="font-size: 12px; color: #4B5563; white-space: nowrap">Nov 11</span>
+</div>
+<span style="font-size: 12px; color: #4B5563">4 decking photos added</span>
+</div>
+</div>
+
+<div style="display: flex; gap: 12px">
+<div style="display: flex; flex-direction: column; align-items: center; width: 14px">
+<div style="width: 12px; height: 12px; border-radius: 99px; margin-top: 4px; background: #15803D; border: 2px solid #15803D; box-sizing: border-box"></div>
+<div style="flex: 1; width: 2px; background: #E5E7EB"></div>
+</div>
+<div style="flex: 1; display: flex; flex-direction: column; gap: 2px; padding-bottom: 12px">
+<div style="display: flex; justify-content: space-between; gap: 8px">
+<span style="font-size: 14px; font-weight: 600; color: #14181F">Adjuster inspection</span>
+<span style="font-size: 12px; color: #4B5563; white-space: nowrap">Nov 10</span>
+</div>
+<span style="font-size: 12px; color: #4B5563">Notes and scope logged</span>
+</div>
+</div>
+
+<div style="display: flex; gap: 12px">
+<div style="display: flex; flex-direction: column; align-items: center; width: 14px">
+<div style="width: 12px; height: 12px; border-radius: 99px; margin-top: 4px; background: #15803D; border: 2px solid #15803D; box-sizing: border-box"></div>
+<div style="flex: 1; width: 2px; background: #E5E7EB"></div>
+</div>
+<div style="flex: 1; display: flex; flex-direction: column; gap: 2px; padding-bottom: 12px">
+<div style="display: flex; justify-content: space-between; gap: 8px">
+<span style="font-size: 14px; font-weight: 600; color: #14181F">Adjuster opened gallery</span>
+<span style="font-size: 12px; color: #4B5563; white-space: nowrap">Nov 8</span>
+</div>
+<span style="font-size: 12px; color: #4B5563">Viewed 18 photos · downloaded originals</span>
+</div>
+</div>
+
+<div style="display: flex; gap: 12px">
+<div style="display: flex; flex-direction: column; align-items: center; width: 14px">
+<div style="width: 12px; height: 12px; border-radius: 99px; margin-top: 4px; background: #1D4ED8; border: 2px solid #1D4ED8; box-sizing: border-box"></div>
+<div style="flex: 1; width: 2px; background: #E5E7EB"></div>
+</div>
+<div style="flex: 1; display: flex; flex-direction: column; gap: 2px; padding-bottom: 12px">
+<div style="display: flex; justify-content: space-between; gap: 8px">
+<span style="font-size: 14px; font-weight: 600; color: #1D4ED8">Pre-claim package emailed</span>
+<span style="font-size: 12px; color: #4B5563; white-space: nowrap">Nov 7</span>
+</div>
+<span style="font-size: 12px; color: #4B5563">18 photos · every check passed</span>
+</div>
+</div>
+
+<div style="display: flex; gap: 12px">
+<div style="display: flex; flex-direction: column; align-items: center; width: 14px">
+<div style="width: 12px; height: 12px; border-radius: 99px; margin-top: 4px; background: #15803D; border: 2px solid #15803D; box-sizing: border-box"></div>
+<div style="flex: 1; width: 2px; background: #E5E7EB"></div>
+</div>
+<div style="flex: 1; display: flex; flex-direction: column; gap: 2px; padding-bottom: 12px">
+<div style="display: flex; justify-content: space-between; gap: 8px">
+<span style="font-size: 14px; font-weight: 600; color: #14181F">Claim created</span>
+<span style="font-size: 12px; color: #4B5563; white-space: nowrap">Nov 7</span>
+</div>
+<span style="font-size: 12px; color: #4B5563">Hail 10/22/2026</span>
+</div>
+</div>
+
+</div>
+</div>
+<div style="padding: 16px 20px 28px; display: flex; gap: 10px">
+<button style="flex: 1; height: 52px; border-radius: 12px; border: 1px solid #D1D5DB; background: #FFFFFF; color: #14181F; font: inherit; font-size: 15px; font-weight: 600">Download claim file</button>
+<button style="flex: 1; height: 52px; border-radius: 12px; border: none; background: #1D4ED8; color: #FFFFFF; font: inherit; font-size: 15px; font-weight: 600">Remind adjuster</button>
+</div>
+</div>
+</section>
+</div>
+<div class="controls"><a href="#" id="prev">← Back</a><a href="#" id="next">Next →</a></div>
+</div>
+</div>
+<script>
+(function(){
+  var order = ["Signup","Plan","Setup","Home","Main","ShotList","Capture","Sort","Check","Pdf","Send","Gallery","Supplement","Build","Signoff","Timeline"];
+  function show(){
+    var id = location.hash.slice(1);
+    if (order.indexOf(id) < 0) id = order[0];
+    order.forEach(function(n){ document.getElementById(n).hidden = (n !== id); });
+    document.querySelectorAll('nav a').forEach(function(a){
+      if (a.dataset.s === id) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
+    });
+    var i = order.indexOf(id);
+    document.getElementById('prev').href = '#' + order[Math.max(0, i - 1)];
+    document.getElementById('next').href = '#' + order[Math.min(order.length - 1, i + 1)];
+    if (window.innerWidth <= 640) window.scrollTo(0, 0);
+  }
+  document.querySelectorAll('.screen form').forEach(function(f){ f.addEventListener('submit', function(e){ e.preventDefault(); }); });
+  window.addEventListener('hashchange', show);
+  show();
+})();
+</script>
+</body>
+</html>
